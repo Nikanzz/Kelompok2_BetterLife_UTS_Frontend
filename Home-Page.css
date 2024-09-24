@@ -1,0 +1,181 @@
+/* Global */
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --color-dark-blue-gray: #2E4053;
+    --color-light-gray: #F4F6F7;
+    --color-bright-blue: #3498DB;
+    --color-black: #000000;
+    --color-white: #fff;
+}
+
+body {
+    font-family: Georgia, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-black);
+    overflow-x: hidden;
+    background: url(img/Background-Gradient.png);
+    background-position: center;
+}
+
+main {
+    display: flex;
+    width: 96%;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 3.6rem;
+    font-weight: 900;
+    font-family: 'Lucida Sans', sans-serif;
+}
+
+h3 {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+span.life {
+    color: var(--color-bright-blue);
+}
+
+
+/* Sidebar */
+
+aside {
+    position: fixed;
+    width: 15%;
+}
+
+aside .toggle .logo {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 900;
+    padding: 1.5rem 1rem;
+    color: var(--color-white);
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+aside .toggle .logo:hover {
+    transform: scale(1.1);
+}
+
+aside .feature-list {
+    display: flex;
+    flex-direction: column;
+    height: 83vh;
+    position: relative;
+    gap: 2rem;
+    align-items: start;
+    justify-content: start;
+    padding: 2rem;
+    border-radius: 16px;
+    background-color: var(--color-dark-blue-gray);
+    box-shadow: 0 0.5rem 2rem var(--color-dark-blue-gray);
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+aside .feature-list a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s;
+    color: var(--color-light-gray);
+}
+
+aside .feature-list a h3 {
+    transition: all 0.3s;
+}
+
+aside .feature-list a:last-child {
+    position: absolute;
+    bottom: 2rem;
+}
+
+aside .feature-list:hover {
+    box-shadow: none;
+}
+
+aside .feature-list a:hover h3 {
+    color: var(--color-bright-blue);
+}
+
+aside .feature-list a:hover{
+    margin-left: 0.5rem;
+    color: var(--color-bright-blue);
+}
+
+/* Main Content */
+
+article {
+    position: relative;
+    left: 16%;
+    width: 87%;
+    color: var(--color-white);
+}
+
+     /* Description */
+
+    article .hero {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+        height: 100vh;
+        text-align: start;
+        padding: 7rem 3rem;
+    }
+
+    article .hero .hero-explanation h1 {
+        font-size: 6rem;
+        text-align: center;
+        margin-bottom: 3rem;
+        animation: infinite-growing 2.5s infinite;
+    }
+
+    article .hero .hero-explanation p {
+        text-align: justify;
+        line-height: 1.6;
+        overflow: hidden;
+        animation: visibility 2.5s ease-in-out;
+    }
+
+    article .hero .hero-img img{
+        width: 100%;
+        animation: infinite-moving 3s ease-in-out infinite;
+    }
+
+    @keyframes infinite-moving {
+        0% {transform: translateY(0);}
+        50% {transform: translateY(-3%);}
+        100% {transform: translateY(0);}
+    }
+
+    @keyframes infinite-growing {
+        0% {transform: scale(1);}
+        50% {transform: scale(1.05);}
+        100% {transform: scale(1);}
+    }
+
+    @keyframes visibility {
+        0% {opacity: 0;}
+        50% {opacity: 50%;}
+        100% {opacity: 100%;}
+    }
+
+
+
