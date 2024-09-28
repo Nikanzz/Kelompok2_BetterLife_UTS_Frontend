@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diary | Better Life</title>
+    <link rel="stylesheet" href= "diary.css">
+</head>
+<body>
+
+    <!-- Diary Section -->
+    <section id="diary">
+        <h1>Daily Reflection Journal</h1>
+        <p>Write down your thoughts, reflections, and self-evaluation here.</p>
+        <form id="diaryForm">
+            <textarea id="diaryInput" placeholder="What's on your mind today?"></textarea>
+            <button type="button" onclick="saveEntry()">Save Entry</button>
+        </form>
+        <div id="diaryEntries"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Better Life - All Rights Reserved</p>
+    </footer>
+
+    <script src="diary-script.js"></script>
+</body>
+</html>

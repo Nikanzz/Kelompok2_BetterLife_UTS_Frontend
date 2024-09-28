@@ -1,0 +1,99 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Georgia, serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #000000;
+    color: #F4F6F7;
+}
+
+/* Main Content Area */
+main {
+    flex: 1;
+    padding: 40px;
+    max-width: 800px;
+    margin: auto;
+}
+
+h1, h2 {
+    font-family: 'Lucida Sans', sans-serif;
+    color: white;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #3498DB;
+}
+
+/* Book Summary Section */
+#book-summary {
+    padding: 40px;
+    background-color: #2E4053;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.book-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.book {
+    background-color: white;
+    color: #000000;
+    padding: 20px;
+    border-left: 5px solid #3498DB;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; /* Menyusun elemen-elemen di dalam div .book menjadi kolom */
+    align-items: center;    /* Menjaga agar gambar dan teks tetap di tengah */
+    text-align: center;     /* Mengatur teks menjadi rata tengah */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.book img.book-cover {
+    width: 80px;
+    height: 120px;
+    margin-bottom: 20px; /* Menambah jarak antara gambar dan teks */
+}
+
+.book-content {
+    flex-grow: 1;
+    text-align: center; /* Menyelaraskan teks di bagian tengah */
+}
+
+.book h2 {
+    margin-bottom: 10px;
+    color: #3498DB;
+    font-size: 1.5rem;
+}
+
+.book-quote {
+    font-style: italic;
+    color: #333;
+    margin: 10px 0;
+}
+
+.book-summary p {
+    font-size: 0.9rem;
+    color: #333;
+}
