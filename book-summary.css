@@ -97,3 +97,7 @@ p {
     font-size: 0.9rem;
     color: #333;
 }
+
+footer p {
+    color : white
+}
