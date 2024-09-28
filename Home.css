@@ -22,30 +22,40 @@ body {
     font-family: Georgia, sans-serif;
     width: 100vw;
     height: 100vh;
-    background-color: var(--color-black);
-    overflow-x: hidden;
-    /* background: url(img/Background-Gradient.png); */
-    background-position: center;
+    overflow: hidden;
+
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
 }
 
 main {
     display: flex;
     width: 96%;
-    margin: 0 auto;
+    margin: 0 auto; 
 }
 
 h1 {
     font-size: 3.6rem;
     font-weight: 900;
-    font-family: 'Lucida Sans', sans-serif;
+    font-family: Georgia, sans-serif;
+    text-shadow: 0 0 10px var(--color-white), 0 0 20px var(--color-white), 0 0 30px var(--color-white), 0 0 40px var(--color-white);
+    position: relative;
+    top: -30px;
 }
 
 h3 {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 500;
 }
 
-span.life {
+span {
     color: var(--color-bright-blue);
 }
 
@@ -53,18 +63,26 @@ span.life {
 /* Sidebar */
 
 aside {
-    position: fixed;
+    position: relative;
     width: 15%;
+    height: 90vh;
+    animation: visibility 2.5s ease-in-out;
+    margin-right: 2rem;
 }
 
 aside .toggle .logo {
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 900;
     padding: 1.5rem 1rem;
     color: var(--color-white);
     transition: all 0.5s;
     cursor: pointer;
+}
+
+aside .toggle .logo h2 {
+    color: #020202;
+    text-shadow: 0 0 10px var(--color-white), 0 0 20px var(--color-white), 0 0 30px var(--color-white), 0 0 40px var(--color-white);
 }
 
 aside .toggle .logo:hover {
@@ -74,7 +92,7 @@ aside .toggle .logo:hover {
 aside .feature-list {
     display: flex;
     flex-direction: column;
-    height: 83vh;
+    height: 85%;
     position: relative;
     gap: 2rem;
     align-items: start;
@@ -100,6 +118,12 @@ aside .feature-list a h3 {
     transition: all 0.3s;
 }
 
+aside .feature-list a.active {
+    color: var(--color-bright-blue);
+    font-weight: 900;
+    margin-left: 0.5rem;
+}
+
 aside .feature-list a:last-child {
     position: absolute;
     bottom: 2rem;
@@ -122,59 +146,78 @@ aside .feature-list a:hover{
 
 article {
     position: relative;
-    left: 16%;
-    width: 87%;
+    width: 82%;
+    height: 90vh;
+    animation: visibility 2.5s ease-in-out;
     color: var(--color-white);
 }
 
-     /* Description */
+/* Description */
 
-    article .hero {
-        display: grid;
-        grid-template-columns: 1.5fr 1fr;
-        align-items: center;
-        gap: 0.5rem;
-        width: 100%;
-        height: 100vh;
-        text-align: start;
-        padding: 7rem 3rem;
+article .hero {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    height: 80%;
+    text-align: start;
+    padding: 7rem 3rem;
     }
 
-    article .hero .hero-explanation h1 {
-        font-size: 6rem;
-        text-align: center;
-        margin-bottom: 3rem;
-        animation: infinite-growing 2.5s infinite;
+article .hero .hero-explanation h1 {
+    color: var(--color-black);
+    font-size: 6rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: infinite-growing 2.5s infinite;
     }
 
-    article .hero .hero-explanation p {
-        text-align: justify;
-        line-height: 1.6;
-        overflow: hidden;
-        animation: visibility 2.5s ease-in-out;
+article .hero .hero-explanation p {
+    text-align: justify;
+    line-height: 1.6;
+    overflow: hidden;
     }
 
-    article .hero .hero-img img{
-        width: 100%;
-        animation: infinite-moving 3s ease-in-out infinite;
+article .hero .hero-img img{
+    width: 100%;
+    animation: infinite-moving 3s ease-in-out infinite;
     }
 
-    @keyframes infinite-moving {
-        0% {transform: translateY(0);}
-        50% {transform: translateY(-3%);}
-        100% {transform: translateY(0);}
+/* Footer */
+
+footer {
+    background-color: var(--color-dark-blue-gray);
+    text-align: center;
+    padding: 10px 0;
+    color: #F4F6F7;
+    position: relative;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    animation: visibility 2.5s ease-in-out;
+}
+
+footer p {
+    color : white
+}
+
+@keyframes infinite-moving {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(-3%);}
+    100% {transform: translateY(0);}
     }
 
-    @keyframes infinite-growing {
-        0% {transform: scale(1);}
-        50% {transform: scale(1.05);}
-        100% {transform: scale(1);}
+@keyframes infinite-growing {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.05);}
+    100% {transform: scale(1);}
     }
 
-    @keyframes visibility {
-        0% {opacity: 0;}
-        50% {opacity: 50%;}
-        100% {opacity: 100%;}
+@keyframes visibility {
+    0% {opacity: 0;}
+    50% {opacity: 50%;}
+    100% {opacity: 100%;}
     }
 
 
