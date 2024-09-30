@@ -98,6 +98,32 @@ p {
     color: #333;
 }
 
+/* Footer */
+footer {
+    background-color: #1C2833;
+    text-align: center;
+    padding: 10px 0;
+    color: #F4F6F7;
+    position: relative;
+    width: 100%;
+}
+
 footer p {
     color : white
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 30px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: skyblue;
 }
