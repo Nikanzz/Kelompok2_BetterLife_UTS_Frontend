@@ -1,0 +1,52 @@
+/* Mengatur margin, padding, dan font untuk body */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #f0f0f0;
+}
+
+/* Mengatur posisi dan ukuran body dan canvas */
+body, canvas {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Container untuk audio dan gambar */
+.container {
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 400px;
+    z-index: 1; /* Membuat container berada di atas canvas */
+    position: relative;
+}
+
+/* Mengatur tampilan gambar */
+.imgbox img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Mengatur bagian audio */
+.audio {
+    padding: 20px;
+    background-color: #fafafa;
+}
+
+/* Mengatur ukuran elemen audio */
+audio {
+    width: 100%;
+}
