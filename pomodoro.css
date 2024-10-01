@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--color-white);
+}
+
+:root {
+    --color-dark-blue-gray: #2E4053;
+    --color-light-gray: #F4F6F7;
+    --color-bright-blue: #3498DB;
+    --color-black: #000000;
+    --color-white: #fff;
+}
+
+body {
+    font-family: Georgia, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(46,64,83);
+    background: linear-gradient(90deg, rgba(46,64,83,1) 0%, rgba(28,40,51,1) 35%);
+}
+
+.container {
+    background-color: var(--color-dark-blue-gray);
+    padding: 50px 100px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
+
+.container .session {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    background-color: #5DADE2;
+    border-radius: 30px;
+}
+
+.container .session button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.container .session #focus-session.active{
+    font-weight: 700;
+    background-color: var(--color-bright-blue);
+    border-radius: 30px;
+    height: 100%;
+}
+
+.container .session #break-session.active{
+    font-weight: 700;
+    background-color: var(--color-bright-blue);
+    border-radius: 30px;
+    height: 100%;
+}
+
+.container h1 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+.container .controls {
+    margin-top: 20px;
+}
+
+.circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid var(--color-bright-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center,
+              #3498DB 0%,
+              #5DADE2 50%,
+              #1ABC9C 100%);
+}
+
+.time {
+    font-size: 48px;
+}
+
+button {
+    margin: 5px 20px;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 24px;
+}
