@@ -1,102 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="calendar.css" />
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-  />
-  <link 
-    href="https://fonts.cdnfonts.com/css/georgia" 
-    rel="stylesheet" 
-    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" 
-    crossorigin="anonymous" 
-    referrerpolicy="no-referrer"
-  />                                                                                                                                                                                                                                   
-    <title>Calendar</title>
+    <title>Calendar To-Do List</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="calendar.css" />
   </head>
   <body>
-    <section id="calendar">
-    <div class="container">
-      <!-- div class container kalender bagian kiri -->
-      <div class="left">
-        <div class="calendar">
-          <div class="month">
-            <i class="fas fa-angle-left prev"></i>
-            <div class="date"></div> <!-- Tanggal ini akan diisi secara dinamis di JavaScript -->
-            <i class="fas fa-angle-right next"></i>
-          </div>
-          <!-- div untuk setiap hari2 -->
-          <div class="weekdays">
-            <div>Sun</div>
-            <div>Mon</div>
-            <div>Tue</div>
-            <div>Wed</div>
-            <div>Thu</div>
-            <div>Fri</div>
-            <div>Sat</div>
-          </div>
-          <!-- div untuk hari2 dalam bulan tertentu, diisi di javascriot -->
-          <div class="days"></div>
-          <div class="goto-today">
-            <div class="goto">
-              <input type="text" placeholder="mm/yyyy" class="date-input" />
-              <button class="goto-btn">Go</button>
-            </div>
-            <button class="today-btn">Today</button>
-          </div>
-        </div>
+    <!-- Container utama yang akan menampung kalender dan to-do list -->
+    <div id="container">
+      <!-- Calendar Container -->
+      <div id="calendar-container">
+        <div id="eventslink">Events</div>
+        <div id="listevents"></div>
+        <div id="calendar"></div>
+        <div id="event"></div>
+        <div id="today"></div>
       </div>
-      <!-- div bagian kanan -->
-      <div class="right">
-        <div class="today-date">
-          <div class="event-day">Fri</div>
-          <div class="event-date">20th September 2024</div>
-          <div class="to-do-list"><h1>| To-do list</h1></div>
-        </div>
-        <div class="events">
-          <!-- Event list akan muncul (javascript) -->
-        </div>
-        <div class="add-event-wrapper">
-          <div class="add-event-header">
-            <div class="title">Add event</div>
-            <i class="fas fa-times close"></i>
-          </div>
-          <div class="add-event-body">
-            <div class="add-event-input">
-              <input type="text" placeholder="event Name" class="event-name" />
-            </div>
-            <!-- waktu mulai -->
-            <div class="add-event-input">
-              <input
-                type="time"
-                placeholder="Event Time From"
-                class="event-time-from"
-              />
-            </div>
-            <!-- waktu akhir -->
-            <div class="add-event-input">
-              <input
-                type="time"
-                placeholder="Event Time To"
-                class="event-time-to"
-              />
-            </div>
-          </div>
-          <!-- Bagian footer -->
-          <div class="add-event-footer">
-            <button class="add-event-btn">Add</button>
-          </div>
-        </div>
+      
+      <!-- To-Do List Container -->
+      <div id="todolist-container">
+        <h3>To-Do List</h3>
+        <input type="text" id="todo-input" placeholder="Enter a task..." />
+        <button id="add-todo">Add</button>
+        <ul id="todo-list"></ul>
       </div>
-      <button class="add-event">
-        <i class="fas fa-plus"></i>
-      </button>
     </div>
-  </section>
-    <script src="calendar.js"></script>
+    
+    <script type="text/javascript" src="jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="calendar.js"></script>
   </body>
 </html>
