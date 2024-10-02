@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login-and-register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <title>Login and Register Page</title>
+</head>
+<body>
+    <section class="container">
+        <div class="back">
+            <a href="Home.html"><i class="fa-solid fa-left-long"></i></a>
+        </div>
+        <div class="box login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input login-email">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email</label>
+                </div>
+
+                <div class="input login-password">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="password" name="password" required>
+                    <label for="password">Password</label>
+                </div>
+
+                <div class="forget-and-remember">
+                    <label><input type="checkbox"> Remember me</label>
+                    <a href="#">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="button">Login</button>
+
+                <div class="no-acc">
+                    <p>Don't have an account? <a href="#" id="register-link">Register</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="box register">
+            <h2>Register</h2>
+            <form action="#">
+                <div class="input username">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="username" name="username" required>
+                    <label for="username">Username</label>
+                </div>
+
+                <div class="input login-email">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email</label>
+                </div>
+
+                <div class="input login-password">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="password" name="password" required>
+                    <label for="password">Password</label>
+                </div>
+
+                <div class="forget-and-remember">
+                    <label><input type="checkbox"> I agree to the terms & conditions</label>
+                </div>
+
+                <button type="submit" class="button">Register</button>
+
+                <div class="no-acc">
+                    <p>Already have an account? <a href="#" id="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script src="login-and-register.js"></script>
+</body>
+</html>
