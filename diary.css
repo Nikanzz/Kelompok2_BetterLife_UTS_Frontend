@@ -125,8 +125,31 @@ footer {
     color: #F4F6F7;
     position: relative;
     width: 100%;
+    bottom: 0;
 }
 
 footer p {
-    color : white
+    color: white;
+    margin: 5px 0;
+}
+
+footer p:first-of-type {
+    font-size: 1rem;
+}
+
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 30px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: skyblue;
 }
