@@ -2,7 +2,7 @@ function saveEntry() {
     const diaryInput = document.getElementById('diaryInput');
     const diaryEntries = document.getElementById('diaryEntries');
 
-    // Check if the input is empty
+    // Cek apakah input kosong
     if (diaryInput.value.trim() === '') {
         alert('Please enter some text before saving.');
         return;
@@ -10,7 +10,7 @@ function saveEntry() {
 
     const newEntry = document.createElement('div');
 
-    // Create entry with date and time
+    // Buat entri dengan tanggal dan waktu
     const date = new Date();
     const formattedDate = date.toLocaleString('en-US', { dateStyle: 'full', timeStyle: 'short' });
 
@@ -22,7 +22,7 @@ function saveEntry() {
     `;
     diaryEntries.appendChild(newEntry);
 
-    // Save entry to localStorage
+    // Simpan entri ke localStorage
     let entries = JSON.parse(localStorage.getItem('diaryEntries')) || [];
     entries.push({
         date: formattedDate,
@@ -30,11 +30,11 @@ function saveEntry() {
     });
     localStorage.setItem('diaryEntries', JSON.stringify(entries));
 
-    // Clear input field
+    // Kosongkan kolom input
     diaryInput.value = '';
 }
 
-// Function to load entries from localStorage
+// Fungsi untuk memuat entri dari localStorage
 function loadEntries() {
     const diaryEntries = document.getElementById('diaryEntries');
     let entries = JSON.parse(localStorage.getItem('diaryEntries')) || [];
@@ -51,18 +51,18 @@ function loadEntries() {
     });
 }
 
-// Function to remove an entry
+// Fungsi untuk menghapus entri
 function removeEntry(button, index) {
     const entryElement = button.parentElement;
     entryElement.remove();
 
-    // Remove from localStorage
+    // Hapus dari localStorage
     let entries = JSON.parse(localStorage.getItem('diaryEntries')) || [];
     entries.splice(index, 1);
     localStorage.setItem('diaryEntries', JSON.stringify(entries));
 }
 
-// Call loadEntries on page load
+// Panggil loadEntries saat halaman dimuat
 window.onload = function() {
     loadEntries();
 };

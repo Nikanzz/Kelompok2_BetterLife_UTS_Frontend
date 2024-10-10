@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Georgia, serif;
+    font-family: 'Poppins';
 }
 
 html, body {
@@ -14,8 +14,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #000000;
-    color: #F4F6F7;
+    background-image: linear-gradient(to top, #00153c, #001844, #001b4d, #001f55, #00225e, #012a69, #013275, #003b81, #004b92, #005ba3, #006cb4,#007dc4);
 }
 
 /* Main Content Area */
@@ -30,14 +29,8 @@ h1, h2 {
     color: white;
 }
 
-p {
-    font-size: 1.2rem;
-    color: #3498DB;
-}
-
 /* Diary Section */
 #diary {
-    background-color: #2E4053;
     padding: 40px;
     border-radius: 8px;
     margin-bottom: 30px;
@@ -47,10 +40,6 @@ p {
 #diary h1 {
     font-size: 2rem;
     margin-bottom: 5px;
-}
-
-#diary:hover {
-    background-color: #1F3A46;
 }
 
 #diaryInput {
@@ -82,7 +71,7 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-weight: 700;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins';
 }
 
 button:hover {
@@ -91,7 +80,7 @@ button:hover {
 
 .diary-entry {
     margin-top: 20px;
-    background-color: #2E4053;
+    background-color: #F4F6F7;
     padding: 15px;
     border-left: 5px solid #3498DB;
     border-radius: 8px;
