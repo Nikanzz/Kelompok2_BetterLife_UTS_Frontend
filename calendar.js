@@ -237,40 +237,48 @@ jQuery(function($) {
     clearEvents();
     var validEvent = false;
     //Year-month jika terdapat event
-    if(!jQuery.isEmptyObject(events)) {
-      $.each(events, function(monthYear, day) {
-        var yearMonth = monthYear.split('-');
-        $('#listevents').append($('<div>').attr('id', monthYear + 'month'));
-        //Day
-        $.each(day, function(key3, event) {
-          $('#' + monthYear + 'month').append($('<div>').attr('id', key3 + 'day'));
-          validEvent = false;
-          $.each(event, function(key4, value) {
-            //Same year, same month, and at least today or day later in month
-            if(yearMonth[0] == Number(nowYear) && yearMonth[1] == Number(nowMonth) && key3 >= Number(nowDay)) {
-              appendEditBox(key3 + 'day', yearMonth[0], yearMonth[1], key3, key4, value, false);
-              validEvent = true;
-            }
-            //Same year but a future month
-            if(yearMonth[0] == Number(nowYear) && yearMonth[1] > Number(nowMonth)) {
-              appendEditBox(key3 + 'day', yearMonth[0], yearMonth[1], key3, key4, value, false);
-              validEvent = true;
-            }
-            //A future year
-            if(Number(yearMonth[0]) == (Number(nowYear)+1) && yearMonth[1] <= Number(nowMonth)) {
-              appendEditBox(key3 + 'day', yearMonth[0], yearMonth[1], key3, key4, value, false);
-              validEvent = true;
-            }
-          });
-          if(validEvent) {
-            $('#' + key3 + 'day').prepend($('<div>').addClass('eventday').html(months[Number(yearMonth[1])][1] + ' ' + key3 + ', ' + yearMonth[0]));
-          }
+    if (!jQuery.isEmptyObject(events)) {
+        $.each(events, function(monthYear, day) {
+            var yearMonth = monthYear.split('-');
+            $('#listevents').append($('<div>').attr('id', monthYear + 'month'));
+            //Day
+            $.each(day, function(key3, event) {
+                $('#' + monthYear + 'month').append($('<div>').attr('id', key3 + 'day'));
+                validEvent = false;
+                $.each(event, function(key4, value) {
+                    //Same year, same month, and at least today or day later in month
+                    if (yearMonth[0] == Number(nowYear) && yearMonth[1] == Number(nowMonth) && key3 >= Number(nowDay)) {
+                        appendEditBox(key3 + 'day', yearMonth[0], yearMonth[1], key3, key4, value, false);
+                        validEvent = true;
+                    }
+                    //Same year but a future month
+                    if (yearMonth[0] == Number(nowYear) && yearMonth[1] > Number(nowMonth)) {
+                        appendEditBox(key3 + 'day', yearMonth[0], yearMonth[1], key3, key4, value, false);
+                        validEvent = true;
+                    }
+                    //A future year
+                    if (Number(yearMonth[0]) == (Number(nowYear) + 1) && yearMonth[1] <= Number(nowMonth)) {
+                        appendEditBox(key3 + 'day', yearMonth[0], yearMonth[1], key3, key4, value, false);
+                        validEvent = true;
+                    }
+                });
+                if (validEvent) {
+                    var eventDiv = $('#' + key3 + 'day');
+                    eventDiv.prepend($('<div>').addClass('eventday').html(months[Number(yearMonth[1])][1] + ' ' + key3 + ', ' + yearMonth[0]));
+
+                    // Tambahkan tombol "Delete"
+                    var deleteBtn = $('<button>').addClass('delete-btn').html('Delete').click(function() {
+                        eventDiv.remove(); // Hapus event ketika tombol "Delete" diklik
+                    });
+
+                    eventDiv.append(deleteBtn); // Tambahkan tombol setelah setiap event
+                }
+            });
         });
-      });
     } else {
-      $('#listevents').append($('<div>').html('<i>There are no events to display</i>'));
+        $('#listevents').append($('<div>').html('<i>There are no events to display</i>'));
     }
-  }
+}
 
   // Fungsi untuk menambahkan kotak edit event
   function appendEditBox(id, y, m, d, i, content, displaydailies = false) {
@@ -376,3 +384,8 @@ $(document).ready(function() {
   });
 });
 
+$(document).ready(function(){
+        $('#back-button').on('click', function(){
+            window.location.href = 'Home.html'; // Mengarahkan ke Home.html
+        });
+    });
