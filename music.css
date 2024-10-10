@@ -1,52 +1,236 @@
-/* Mengatur margin, padding, dan font untuk body */
-body {
+/* Reset dasar dan pengaturan default untuk semua elemen */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Styling dasar untuk body halaman */
+  body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    height: 100vh;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    background-color: #f0f0f0;
-}
-
-/* Mengatur posisi dan ukuran body dan canvas */
-body, canvas {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-image: linear-gradient(to top, #00153c, #001844, #001b4d, #001f55, #00225e, #012a69, #013275, #003b81, #004b92, #005ba3, #007dc4);
+  }
+  
+  /* Kontainer utama untuk konten */
+  .container {
+    text-align: center;
+    background-color: #121212;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    border-radius: 50px;
+    overflow: hidden;
+    width: 80%;
+    max-width: 450px;
+    z-index: 1;
+    position: relative;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease-in-out;
+    margin-bottom: 100px;
+    margin: 120px;
+  }
+  
+  /* Styling untuk judul h1 */
+  h1 {
     position: absolute;
+    top: 3%; 
+    font-size: 3.5rem;
+    color: #fff;
+    text-align: center;
+    z-index: 2;
+    width: 100%;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    transition: all 0.4s ease;
+  }
+  
+  /* Elemen untuk animasi latar belakang */
+  h1:hover {
+    color: #000000;
+    text-shadow: 0 0 15px #6e6e6e;
+  }
+  
+  /* Elemen lingkaran untuk animasi */
+  .background-animation {
+    position: fixed;
     top: 0;
     left: 0;
-}
-
-/* Container untuk audio dan gambar */
-.container {
-    text-align: center;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-    width: 400px;
-    z-index: 1; /* Membuat container berada di atas canvas */
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  /* Elemen lingkaran untuk animasi */
+  .circle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(52, 152, 219, 0.15);
+    animation: float 8s infinite ease-in-out;
+  }
+  
+  /* Pengaturan ukuran dan posisi lingkaran pertama */
+  .circle:nth-child(1) {
+    width: 120px;
+    height: 120px;
+    top: 15%;
+    left: 5%;
+    animation-delay: 0s;
+  }
+  
+  /* Pengaturan ukuran dan posisi lingkaran kedua */
+  .circle:nth-child(2) {
+    width: 180px;
+    height: 180px;
+    top: 55%;
+    right: 10%;
+    animation-delay: 2s;
+  }
+  
+  /* Pengaturan ukuran dan posisi lingkaran ketiga */
+  .circle:nth-child(3) {
+    width: 90px;
+    height: 90px;
+    bottom: 8%;
+    left: 25%;
+    animation-delay: 4s;
+  }
+  
+  /* Animasi float untuk lingkaran */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-30px) rotate(360deg);
+    }
+  }
+  
+  /* Kontainer untuk gambar */
+  .imgbox {
     position: relative;
-}
-
-/* Mengatur tampilan gambar */
-.imgbox img {
+    overflow: hidden;
+  }
+  
+  .imgbox img {
     width: 100%;
     height: auto;
-    border-bottom: 1px solid #ddd;
-}
-
-/* Mengatur bagian audio */
-.audio {
-    padding: 20px;
-    background-color: #fafafa;
-}
-
-/* Mengatur ukuran elemen audio */
-audio {
+    transition: transform 0.5s ease-in-out;
+    filter: brightness(1.2);
+  }
+  
+  .imgbox:hover img {
+    transform: scale(1.1);
+  }
+  
+  .imgbox::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
-}
+    height: 35%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  }
+  
+  .audio {
+    padding: 25px;
+    background-color: #e3e3e3;
+    border-top: 2px solid #3498DB;
+    opacity: 0.8;
+  }
+  
+  .custom-audio-player {
+    width: 100%;
+    padding: 50px;
+  }
+  
+  .audio {
+    padding: 30px;
+    margin-top: 20px;
+    background-color: #636363;
+    border-top: 2px solid #3498DB;
+  }
+  
+  audio::-webkit-media-controls-panel {
+    background-color: #fcfcfc;
+  }
+  
+  audio::-webkit-media-controls-play-button,
+  audio::-webkit-media-controls-volume-slider,
+  audio::-webkit-media-controls-mute-button {
+    transition: all 0.3s ease;
+  }
+  
+  audio::-webkit-media-controls-play-button:hover,
+  audio::-webkit-media-controls-volume-slider:hover,
+  audio::-webkit-media-controls-mute-button:hover {
+    opacity: 0.85;
+  }
+  
+  /* media querries */
+  @media (max-width: 480px) {
+    .container {
+      width: 90%;
+      margin: 0 15px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+      top: 5%;
+      letter-spacing: 2px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1rem;
+      top: 7%;
+      letter-spacing: 1px;
+      padding: 0 0px;
+    }
+  }
+  
+  /* footer */
+  footer {
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+    background-color: #121212;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+  }
+  
+  footer p {
+    color: white;
+    margin: 5px 0;
+  }
+  
+  footer p:first-of-type {
+    font-size: 1rem;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .social-icons a {
+    color: white;
+    font-size: 30px;
+    transition: color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: skyblue;
+  }
+  
