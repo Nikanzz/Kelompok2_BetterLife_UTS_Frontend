@@ -153,3 +153,12 @@ body {
 .no-acc a:hover {
     text-decoration: underline;
 }
+
+h2.name-logo {
+    display: none;
+  }
+
+#hamburger {
+    position: absolute;
+    right: 35%;
+}

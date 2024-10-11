@@ -276,3 +276,80 @@ aside.hidden h2,
 aside.hidden a i {
     display: none;
 }
+
+@media only screen and (max-width: 600px) {
+  main {
+      width: 100%;
+  }
+
+  aside {
+      width: 60px;
+      height: 90vh;
+      margin-right: 0.5rem;
+      display: flex;
+      flex-direction: column;
+  }
+
+  aside .toggle .logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0.5rem;
+      height: auto;
+  }
+
+  aside .toggle .logo h2 {
+      font-size: 0.7rem;
+      white-space: nowrap;
+      transform: rotate(0);
+      writing-mode: horizontal-tb;
+  }
+
+  aside .feature-list {
+      padding: 1rem 0.5rem;
+      align-items: center;
+      flex-grow: 1;
+  }
+
+  aside .feature-list a {
+      width: 100%;
+      justify-content: center;
+  }
+
+  aside .feature-list a h3 {
+      display: none;
+  }
+
+  aside .feature-list a i {
+      font-size: 1.5rem;
+  }
+
+  article {
+      width: calc(100% - 60px);
+      height: 90vh;
+  }
+
+  article .hero {
+      grid-template-columns: 1fr;
+      padding: 2rem 1rem;
+  }
+
+  article .hero .hero-explanation h1 {
+      font-size: 3rem;
+  }
+
+  article .hero .hero-img img {
+      width: 80%;
+      margin: 0 auto;
+      display: block;
+  }
+}
+
+h2.name-logo {
+  display: none;
+}
+
+#hamburger {
+  position: absolute;
+  right: 35%;
+}
