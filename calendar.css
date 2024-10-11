@@ -617,6 +617,10 @@ footer p:first-of-type {
   footer p {
     font-size: 0.5rem;
   }
+
+  aside.hidden {
+    transform: translateX(50px);
+  }
 }
 
 /* Hidden */

@@ -145,6 +145,8 @@ h3 {
     border-radius: 8px;
     margin-bottom: 30px;
     transition: background-color 0.3s ease-in-out;
+    position: relative;
+    left: 3%;
 }
 
 #diary h1 {
@@ -222,7 +224,7 @@ footer {
     text-align: center;
     padding: 10px 0;
     color: #F4F6F7;
-    position: relative;
+    position: fixed;
     width: 100%;
     bottom: 0;
 }
