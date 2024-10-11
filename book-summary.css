@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins';
+    text-decoration: none;
 
 html, body {
     height: 100%;
@@ -20,6 +21,26 @@ body {
 }
 }
 
+:root {
+    /*Color Pallete*/
+    --color-dark-blue-gray: #2E4053;
+    --color-light-gray: #F4F6F7;
+    --color-bright-blue: #3498DB;
+    --color-black: #000000;
+    --color-white: #fff;
+
+    /*HSL (Hue, Saturation, Lightness)*/
+    --first-color: hsl(82, 60%, 28%);
+    --title-color: hsl(0, 0%, 15%);
+    --text-color: hsl(0, 0%, 35%);
+    --body-color: hsl(0, 0%, 95%);
+    --container-color: hsl(0, 0%, 100%);
+
+    /* 5 rem = 8px, 1rem = 16px */
+    --h2-font-size: 1.25rem;
+    --small-font-size: .813rem;
+}
+
 .content-wrapper {
     flex-grow: 1;
 }
@@ -28,12 +49,111 @@ body {
     padding-bottom: 1rem;
 }
 
+/* Sidebar */
+aside {
+    position: fixed;
+    left: 0;
+    z-index: 9999;
+    width: 15%;
+    height: 90vh;
+    margin-top: 2rem;
+    border-radius: 16px;
+    background-color: var(--color-dark-blue-gray);
+    box-shadow: 0 0.5rem 2rem var(--color-dark-blue-gray);
+    transition: all 0.25s;
+}
+
+aside .toggle {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+aside .toggle .logo {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 900;
+    padding: 1.5rem 0;
+    color: var(--color-white);
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+aside .toggle .logo h2 {
+    color: var(--color-black);
+}
+
+aside .toggle .logo:hover {
+    transform: scale(1.1);
+}
+
+aside .feature-list {
+    display: flex;
+    flex-direction: column;
+    height: 95%;
+    width: 100%;
+    gap: 2rem;
+    align-items: start;
+    justify-content: start;
+    padding: 2rem;
+    cursor: pointer;
+    transition: all 0.25s;
+}
+
+aside .feature-list a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 1;
+    transition: opacity 0.05s;
+    transition: color 0.3s, margin-left 0.3s;
+    color: var(--color-light-gray);
+}
+
+aside .feature-list a h3 {
+    transition: all 0.3s;
+}
+
+aside .feature-list a.active {
+    color: var(--color-bright-blue);
+    font-weight: 900;
+    margin-left: 0.5rem;
+}
+
+aside .feature-list a:last-child {
+    position: absolute;
+    bottom: 2rem;
+}
+
+aside .feature-list:hover {
+    box-shadow: none;
+}
+
+aside .feature-list a:hover h3 {
+    color: var(--color-bright-blue);
+}
+
+aside .feature-list a:hover {
+    margin-left: 0.5rem;
+    color: var(--color-bright-blue);
+}
+
+aside .feature-list #hamburger {
+    align-self: end;
+    color: var(--color-white);
+}
+
 /* Main Content Area */
 main {
     flex-grow: 1;
     padding: 40px;
     max-width: 800px;
     margin: auto;
+}
+
+span {
+    color: var(--color-bright-blue);
 }
 
 h1 {
@@ -47,6 +167,12 @@ h1 {
 h2 {
     font-family: 'Poppins';
     color: white;
+    font-size: 1.7rem;
+}
+
+h3 {
+    font-size: 0.9rem;
+    /* font-weight: 500; */
 }
 
 .container {
@@ -77,20 +203,6 @@ h2 {
 #searchInput:hover {
     border-color: skyblue;
     box-shadow: 0 4px 15px rgba(135, 206, 250, 0.8);
-}
-
-
-:root {
-    /*HSL (Hue, Saturation, Lightness)*/
-    --first-color: hsl(82, 60%, 28%);
-    --title-color: hsl(0, 0%, 15%);
-    --text-color: hsl(0, 0%, 35%);
-    --body-color: hsl(0, 0%, 95%);
-    --container-color: hsl(0, 0%, 100%);
-
-    /* 5 rem = 8px, 1rem = 16px */
-    --h2-font-size: 1.25rem;
-    --small-font-size: .813rem;
 }
 
 /* Responsive Typography */
@@ -288,7 +400,8 @@ footer {
     text-align: center;
     padding: 10px 0;
     color: #F4F6F7;
-    position: relative;
+    position: relative; 
+    bottom: 0;  
     width: 100%;
 }
 
@@ -315,4 +428,28 @@ footer p:first-of-type {
 
 .social-icons a:hover {
     color: skyblue;
+}
+
+/* Hidden */
+aside.hidden {
+    transform: translateX(-50%);
+}
+
+aside.hidden .toggle .hamburger {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.25rem;
+}
+
+aside .feature-list a.hidden h3 {
+    display: none;
+}
+
+aside.hidden {
+    width: 7.5%;
+}
+
+aside.hidden h2,
+aside.hidden a i {
+    display: none;
 }

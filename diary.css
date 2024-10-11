@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins';
+    text-decoration: none;
 }
 
 html, body {
@@ -17,6 +18,106 @@ body {
     background-image: linear-gradient(to top, #00153c, #001844, #001b4d, #001f55, #00225e, #012a69, #013275, #003b81, #004b92, #005ba3, #006cb4,#007dc4);
 }
 
+span {
+    color: #3498DB;
+}
+
+aside {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    width: 15%;
+    height: 90vh;
+    margin-top: 2rem;
+    border-radius: 16px;
+    background-color: #2E4053;
+    box-shadow: 0 0.5rem 2rem #2E4053;
+    transition: all 0.25s;
+  }
+  
+  aside .toggle {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  aside .toggle .logo {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 900;
+    padding: 1.5rem 0;
+    color: #fff;
+    transition: all 0.5s;
+    cursor: pointer;
+  }
+  
+  aside .toggle .logo h2 {
+    color: #010101;
+    text-shadow: 0 0 10px var(--color-white), 0 0 20px var(--color-white), 0 0 30px var(--color-white), 0 0 40px var(--color-white);
+  }
+  
+  aside .toggle .logo:hover {
+    transform: scale(1.1);
+  }
+  
+  aside .feature-list {
+    display: flex;
+    flex-direction: column;
+    height: 95%;
+    width: 100%;
+    gap: 2rem;
+    align-items: start;
+    justify-content: start;
+    padding: 2rem;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+  
+  aside .feature-list a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    opacity: 1;
+    transition: opacity 0.05s;
+    transition: color 0.3s, margin-left 0.3s;
+    color: #F4F6F7 ;
+  }
+  
+  aside .feature-list a h3 {
+    transition: all 0.3s;
+  }
+  
+  aside .feature-list a.active {
+    color: #3498DB;
+    font-weight: 900;
+    margin-left: 0.5rem;
+  }
+  
+  aside .feature-list a:last-child {
+    position: absolute;
+    bottom: 2rem;
+  }
+  
+  aside .feature-list:hover {
+    box-shadow: none;
+  }
+  
+  aside .feature-list a:hover h3 {
+    color: #3498DB;
+  }
+  
+  aside .feature-list a:hover {
+    margin-left: 0.5rem;
+    color: #3498DB;
+  }
+  
+  aside .feature-list #hamburger {
+    align-self: end;
+    color: rgb(255, 255, 255);
+  }
+
 /* Main Content Area */
 main {
     flex: 1;
@@ -27,6 +128,15 @@ main {
 
 P, h1, h2 {
     color: white;
+}
+
+h2 { 
+    font-size: 1.7rem; 
+    text-align: center; 
+}
+
+h3 {
+    font-size: 0.9rem;
 }
 
 /* Diary Section */
@@ -141,4 +251,28 @@ footer p:first-of-type {
 
 .social-icons a:hover {
     color: skyblue;
+}
+
+/* Hidden */
+aside.hidden {
+    transform: translateX(-50%);
+}
+
+aside.hidden .toggle .hamburger {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.25rem;
+}
+
+aside .feature-list a.hidden h3 {
+    display: none;
+}
+
+aside.hidden {
+    width: 7.5%;
+}
+
+aside.hidden h2,
+aside.hidden a i {
+    display: none;
 }

@@ -1,7 +1,133 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins';
+  text-decoration: none;
+} */
+
 /* Mengatur tampilan latar belakang dan font dasar untuk seluruh halaman */
 body {
+  margin-bottom: 1px;
   background-image: linear-gradient(to top, #00153c, #001844, #001b4d, #001f55, #00225e, #012a69, #013275, #003b81, #004b92, #005ba3, #006cb4, #007dc4);
-  font-family: poppins;
+}
+
+h2 { 
+  font-size: 1.7rem; 
+  text-align: center; 
+}
+
+h3 {
+  font-size: 0.9rem;
+  /* font-weight: 600; */
+}
+
+span {
+  color: #3498DB;
+}
+
+/* Sidebar */
+aside {
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins';
+  text-decoration: none;
+  }
+  
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  width: 15%;
+  height: 90vh;
+  margin-top: 2rem;
+  border-radius: 16px;
+  background-color: #2E4053;
+  box-shadow: 0 0.5rem 2rem #2E4053;
+  transition: all 0.25s;
+}
+
+aside .toggle {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+aside .toggle .logo {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 900;
+  padding: 1.5rem 0;
+  color: #fff;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+aside .toggle .logo h2 {
+  color: #010101;
+}
+
+aside .toggle .logo:hover {
+  transform: scale(1.1);
+}
+
+aside .feature-list {
+  display: flex;
+  flex-direction: column;
+  height: 95%;
+  width: 100%;
+  gap: 2rem;
+  align-items: start;
+  justify-content: start;
+  padding: 2rem;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+aside .feature-list a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 1;
+  transition: opacity 0.05s;
+  transition: color 0.3s, margin-left 0.3s;
+  color: #F4F6F7 ;
+}
+
+aside .feature-list a h3 {
+  transition: all 0.3s;
+}
+
+aside .feature-list a.active {
+  color: #3498DB;
+  font-weight: 900;
+  margin-left: 0.5rem;
+}
+
+aside .feature-list a:last-child {
+  position: absolute;
+  bottom: 2rem;
+}
+
+aside .feature-list:hover {
+  box-shadow: none;
+}
+
+aside .feature-list a:hover h3 {
+  color: #3498DB;
+}
+
+aside .feature-list a:hover {
+  margin-left: 0.5rem;
+  color: #3498DB;
+}
+
+aside .feature-list #hamburger {
+  align-self: end;
+  color: rgb(255, 255, 255);
 }
 
 /* Container utama, mengatur layout dengan flexbox, styling umum untuk border, warna, dan padding */
@@ -16,8 +142,8 @@ body {
   opacity: .95;
   box-shadow: 6px 6px 20px rgba(0, 0, 0, 0.2);
   width: 1000px;
-  padding: 120px;
-  margin: 80px auto;
+  padding: 70px;
+  margin: 50px auto;
   text-align: center;
   gap: 20px;
 }
@@ -387,7 +513,7 @@ footer {
   padding: 10px 0;
   color: #F4F6F7;
   position: relative;
-  width: 100%;
+  width: 100vw;
   bottom: 0;
 }
 
@@ -399,7 +525,6 @@ footer p {
 footer p:first-of-type {
   font-size: 1rem;
 }
-
 
 .social-icons {
   display: flex;
@@ -453,7 +578,7 @@ footer p:first-of-type {
   }
 
   h2 { 
-    font-size: 1.5rem; 
+    font-size: 1.7rem; 
     text-align: center; 
   }
 
@@ -494,25 +619,26 @@ footer p:first-of-type {
   }
 }
 
-/* Media query untuk layar besar (desktop) */
-@media only screen and (min-width: 1200px) {
-  #container {
-    width: 65%;
-  }
+/* Hidden */
+aside.hidden {
+  transform: translateX(-50%);
+}
 
-  .event-item {
-    max-width: 50%;
-  }
+aside.hidden .toggle .hamburger {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.25rem;
+}
 
-  #todo-list li {
-    font-size: 16px;
-  }
+aside .feature-list a.hidden h3 {
+  display: none;
+}
 
-  footer p {
-    font-size: 1.2rem;
-  }
+aside.hidden {
+  width: 7.5%;
+}
 
-  .social-icons a {
-    font-size: 32px;
-  }
+aside.hidden h2,
+aside.hidden a i {
+  display: none;
 }
