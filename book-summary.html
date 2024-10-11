@@ -9,8 +9,58 @@
     </style>
     <link rel="stylesheet" href="book-summary.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
 </head>
 <body>
+    <aside>
+        <div class="toggle">
+            <div class="logo">
+                <h2>Better<span>Life</span></h2>
+            </div>
+            <div class="hamburger">
+                <span href="#" id="hamburger">
+                    <i class="fa-solid fa-bars"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="feature-list">
+            <a href="Home.html">
+                <i class="fa-solid fa-house"></i>
+                <h3>Homepage</h3>
+            </a>
+            <a href="calendar.html">
+                <i class="fa-solid fa-calendar"></i>                   
+                <h3>To-do list calender</h3>
+            </a>
+            <a href="pomodoro.html">
+                <i class="fa-solid fa-hourglass"></i>
+          
+                <h3>Pomodoro</h3>
+            </a>
+            <a href="music.html">
+                <i class="fa-solid fa-music"></i>
+                <h3>Music</h3>
+            </a>
+            <a href="#" class="active">
+                <i class="fa-solid fa-book"></i>
+               
+                <h3>Books</h3>
+            </a>
+            <a href="diary.html">
+                <i class="fa-solid fa-pen-nib"></i>
+                <h3>Jurnal Diary</h3>
+            </a>
+            <a href="login-and-register.html">
+                <i class="fa-solid fa-plus"></i>
+                <h3>New Login</h3>
+            </a>
+            <a href="#">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <h3>Logout</h3>
+            </a>
+        </div>
+    </aside>
     <div class="search-container"></div>
         <input type="text" id="searchInput" placeholder="Search books...">
     </div>
@@ -240,5 +290,6 @@
         <p>&copy; 2024 Better Life - All Rights Reserved</p>
     </footer>
     <script src="book-summary.js"></script>
+    <script src="sidebar.js"></script>
 </body>
 </html>

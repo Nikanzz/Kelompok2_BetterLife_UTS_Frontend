@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 /* Global */
 
 * {
@@ -19,10 +20,9 @@
 }
 
 body {
-    font-family: Georgia, sans-serif;
+    font-family: 'Poppins', sans-serif;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
 
     background: linear-gradient(-45deg, #0331c7, #2376e9, #23a6d5, #007d96);
     background-size: 400% 400%;
@@ -44,7 +44,7 @@ main {
 h1 {
     font-size: 3.6rem;
     font-weight: 900;
-    font-family: Georgia, sans-serif;
+    font-family: 'Poppins', sans-serif;
     text-shadow: 0 0 10px var(--color-white), 0 0 20px var(--color-white), 0 0 30px var(--color-white), 0 0 40px var(--color-white);
     position: relative;
     top: -30px;
@@ -189,18 +189,41 @@ article .hero .hero-img img{
 footer {
     background-color: var(--color-dark-blue-gray);
     text-align: center;
-    padding: 10px 0;
+    padding: 1px;
     color: #F4F6F7;
     position: relative;
     width: 100%;
     position: fixed;
     bottom: 0;
     animation: visibility 2.5s ease-in-out;
+    margin-top: 20px;
 }
 
 footer p {
     color : white
 }
+
+
+footer p:first-of-type {
+    font-size: 1rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 30px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: skyblue;
+}
+
 
 @keyframes infinite-moving {
     0% {transform: translateY(0);}
@@ -220,5 +243,101 @@ footer p {
     100% {opacity: 100%;}
     }
 
+/* Small devices (mobile phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    main {
+        width: 100%;
+    }
 
+    aside {
+        width: 60px;
+        height: 90vh;
+        margin-right: 0.5rem;
+        display: flex;
+        flex-direction: column;
+    }
 
+    aside .toggle .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem;
+        height: auto;
+    }
+
+    aside .toggle .logo h2 {
+        font-size: 0.7rem;
+        white-space: nowrap;
+        transform: rotate(0);
+        writing-mode: horizontal-tb;
+    }
+
+    aside .feature-list {
+        padding: 1rem 0.5rem;
+        align-items: center;
+        flex-grow: 1;
+    }
+
+    aside .feature-list a {
+        width: 100%;
+        justify-content: center;
+    }
+
+    aside .feature-list a h3 {
+        display: none;
+    }
+
+    aside .feature-list a i {
+        font-size: 1.5rem;
+    }
+
+    article {
+        width: calc(100% - 60px);
+        height: 90vh;
+    }
+
+    article .hero {
+        grid-template-columns: 1fr;
+        padding: 2rem 1rem;
+    }
+
+    article .hero .hero-explanation h1 {
+        font-size: 3rem;
+    }
+
+    article .hero .hero-img img {
+        width: 80%;
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+/* Medium devices (tablets, 601px to 1024px) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    main {
+        width: 98%;
+    }
+
+    aside {
+        width: 25%;
+    }
+
+    article {
+        width: 72%;
+    }
+
+    article .hero {
+        grid-template-columns: 1fr;
+        padding: 4rem 2rem;
+    }
+
+    article .hero .hero-explanation h1 {
+        font-size: 4rem;
+    }
+}
+
+/* Large devices (desktops, laptops, 1025px and up) */
+@media only screen and (min-width: 1025px) {
+    /* Current styles are already optimized for large devices */
+    /* You can add specific large device styles here if needed */
+}
